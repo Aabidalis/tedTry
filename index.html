@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEDx SNPSU - ŚRAVANĀ</title>
+    <style>
+        /* General Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000; /* Black background for the whole page */
+            color: #fff; /* White text color */
+        }
+
+        /* --- 1. Header and Navigation Bar --- */
+        .header {
+            background-color: #000;
+            padding: 15px 5%; /* Padding around the header content */
+            display: flex;
+            justify-content: flex-end; /* Align nav to the right */
+            align-items: center;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 25px; /* Spacing between nav items */
+        }
+
+        .nav-item a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+
+        .nav-item a:hover {
+            color: #f00; /* Red on hover */
+        }
+
+        /* Icon Styling - using Unicode for demonstration */
+        .nav-item a::before {
+            content: ''; /* Placeholder for actual icon */
+            margin-right: 8px;
+            font-size: 20px;
+        }
+        .nav-item:nth-child(1) a::before { content: ''; } /* Home icon */
+        .nav-item:nth-child(2) a::before { content: ''; } /* About icon */
+        .nav-item:nth-child(3) a::before { content: ''; } /* Speakers icon */
+        .nav-item:nth-child(4) a::before { content: ''; } /* Sponsor icon */
+        .nav-item:nth-child(5) a::before { content: ''; } /* Team icon */
+
+
+        /* Contact Us Button Style */
+        .contact-button {
+            border: 2px solid #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-left: 25px; /* Spacing from the last link */
+            transition: background-color 0.3s, border-color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-button:hover {
+            background-color: #f00;
+            border-color: #f00;
+        }
+
+        .contact-button a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-button a::before {
+            content: '✉️'; /* Contact Us icon placeholder */
+            margin-right: 8px;
+            font-size: 20px;
+        }
+
+        /* --- 2. Hero Section (Image Focused) --- */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 80px); /* Full viewport height minus header height */
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .hero-image {
+            max-width: 900px; /* Control the max width of the image */
+            width: 90%; /* Make the image responsive */
+            height: auto;
+            /* Optional: Add a slight drop shadow or filter if needed */
+        }
+
+
+        /* --- Media Queries for better responsiveness --- */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 15px 5%;
+            }
+
+            .nav-list {
+                width: 100%;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                gap: 15px;
+                margin-top: 15px;
+            }
+
+            .contact-button {
+                margin: 15px 0 0 0;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+
+
+
+
+
+
+
+/* --- 1. Header and Navigation Bar (UPDATED CSS) --- */
+.header {
+    background-color: #000;
+    padding: 15px 5%; 
+    display: flex;
+    /* Main change: Distribute space between logo (left) and nav (right) */
+    justify-content: space-between; 
+    align-items: center;
+}
+
+/* Style for the logo container/image */
+.header div img {
+    /* Set a max height for the logo for sizing control */
+    max-height: 40px; 
+    width: auto;
+}
+
+/* Style for the navigation list to keep its items aligned */
+.nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Spacing between nav items */
+}
+
+/*
+    -- KEEP EXISTING NAV STYLES BELOW (Unchanged) --
+
+    .nav-item a { ... } 
+    .nav-item a:hover { ... }
+    .nav-item a::before { ... }
+    .contact-button { ... } 
+    .contact-button:hover { ... }
+    .contact-button a { ... }
+    .contact-button a::before { ... }
+*/
+
+/* --- Media Queries for better responsiveness (UPDATED) --- */
+@media (max-width: 768px) {
+    .header {
+        /* Stack items vertically on small screens */
+        flex-direction: column;
+        padding: 15px 5%;
+    }
+
+    /* Center the logo when stacking */
+    .header div {
+        align-self: flex-start; /* Optional: Keep it left-aligned on top */
+        margin-bottom: 15px; /* Space between logo and stacked nav */
+    }
+
+    .nav-list {
+        width: 100%;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .contact-button {
+        margin: 15px 0 0 0;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+      <div><img src="logo-white.png" alt=""></div>
+        <nav>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#home">Home</a></li>
+                <li class="nav-item"><a href="#about">About</a></li>
+                <li class="nav-item"><a href="#speakers">Speakers</a></li>
+                <li class="nav-item"><a href="#sponsor">Sponsor</a></li>
+                <li class="nav-item"><a href="#team">Team</a></li>
+                <li class="nav-item contact-button"><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="SRAVANA-2_page-0001.jpg" alt="TEDx SNPSU - ŚRAVANĀ: The Lost Art of Listening" class="hero-image">
+    </section>
+
+</body>
+</html>
