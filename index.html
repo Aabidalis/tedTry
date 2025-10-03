@@ -25,6 +25,7 @@
             display: flex;
             justify-content: flex-end; /* Align nav to the right */
             align-items: center;
+            position:sticky;
         }
 
         .nav-list {
@@ -54,11 +55,11 @@
             margin-right: 8px;
             font-size: 20px;
         }
-        .nav-item:nth-child(1) a::before { content: ''; } /* Home icon */
-        .nav-item:nth-child(2) a::before { content: ''; } /* About icon */
-        .nav-item:nth-child(3) a::before { content: ''; } /* Speakers icon */
-        .nav-item:nth-child(4) a::before { content: ''; } /* Sponsor icon */
-        .nav-item:nth-child(5) a::before { content: ''; } /* Team icon */
+        .nav-item:nth-child(1) a::before { content: '🏠'; } /* Home icon */
+        .nav-item:nth-child(2) a::before { content: '💡'; } /* About icon */
+        .nav-item:nth-child(3) a::before { content: '🗣️'; } /* Speakers icon */
+        .nav-item:nth-child(4) a::before { content: '🤝'; } /* Sponsor icon */
+        .nav-item:nth-child(5) a::before { content: '👥'; } /* Team icon */
 
 
         /* Contact Us Button Style */
@@ -100,13 +101,15 @@
             min-height: calc(100vh - 80px); /* Full viewport height minus header height */
             text-align: center;
             padding: 50px 20px;
+            width: 100%;
         }
 
         .hero-image {
              /* Control the max width of the image */
+             margin-top: 30px;
             width: 100%; /* Make the image responsive */
             height: 100vh;
-            margin-top: -60px;
+            position: fixed;
             /* Optional: Add a slight drop shadow or filter if needed */
         }
 
@@ -140,7 +143,16 @@
 
 
 
-/* --- 1. Header and Navigation Bar (UPDATED CSS) --- */
+
+
+
+
+
+
+
+
+
+        /* --- 1. Header and Navigation Bar (UPDATED CSS) --- */
 .header {
     background-color: #000;
     padding: 15px 5%; 
@@ -154,7 +166,7 @@
 .header div img {
     /* Set a max height for the logo for sizing control */
     max-height: 40px; 
-    width: auto;
+    width: 100%;
 }
 
 /* Style for the navigation list to keep its items aligned */
@@ -220,12 +232,116 @@
 
 
 
+        /* Countdown Section Styles */
+        .countdown-section {
+            margin: 4rem auto;
+            padding: 2rem;
+            text-align: center;
+            z-index: 5;
+            position: relative;
+            background-color: #1b1919;
+            /* Dark gray background color from image */
+            margin-bottom: 0px;
+            border-top-left-radius: 40px;
+            border-top-right-radius: 40px;
+        }
+
+        .countdown-section .problem {
+            font-size: 1.3rem;
+            max-width: 70%;
+
+        }
+
+        .countdown-section h2 {
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: #e53e3e;
+            /* Red color for "HELLO" */
+            margin-bottom: 0.5rem;
+        }
+
+        .countdown-section h2 span.white-text {
+            color: #ffffff;
+            /* White color for "THERE" */
+        }
+
+         .countdown-section p span.red-text {
+            color: #e53e3e;
+            font-weight: 700;
+            /* White color for "THERE" */
+        }
+
+        .countdown-section p.subtitle {
+            font-size: 1.125rem;
+            color: #d1d5db;
+            margin-bottom: 2rem;
+        }
+
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            /* Allow wrapping on smaller screens */
+        }
+
+        .countdown-box {
+            background-color: #262626;
+            /* Dark gray background color from image */
+            padding: 1.5rem 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            min-width: 120px;
+            /* Ensure boxes don't get too small */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Re-added subtle shadow */
+            flex: 1;
+            /* Allow boxes to grow and shrink */
+            max-width: 200px;
+            /* Max width for larger screens */
+        }
+
+        .countdown-box .value {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .countdown-box .label {
+            font-size: 0.875rem;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Responsive adjustments for countdown */
+        @media (max-width: 600px) {
+            .countdown-box {
+                min-width: 100px;
+                padding: 1rem 0.5rem;
+            }
+
+            .countdown-box .value {
+                font-size: 2.5rem;
+            }
+
+            .countdown-section h2 {
+                font-size: 2rem;
+            }
+
+            .countdown-section p.subtitle {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
 
     <header class="header">
-      <div><img src="logo-white.png" alt=""></div>
+        <div><img src="logo-white.png" alt="">
+        </div>
         <nav>
             <ul class="nav-list">
                 <li class="nav-item"><a href="#home">Home</a></li>
@@ -239,8 +355,99 @@
     </header>
 
     <section class="hero">
-        <img src="Untitled design (1).jpg" alt="TEDx SNPSU - ŚRAVANĀ: The Lost Art of Listening" class="hero-image">
+        <img src="jio.jpg" alt="TEDx SNPSU - ŚRAVANĀ: The Lost Art of Listening" class="hero-image">
     </section>
 
+
+
+
+
+
+
+
+
+
+
+    
+    <!-- Countdown Section -->
+    <section id="countdown" class="countdown-section">
+        <h2>ENTER THE<span class="white-text"> SILENCE</span></h2>
+        <p class="subtitle">Can you listen when the world won’t pause?</p>
+        <div class="countdown-container">
+            <div class="countdown-box">
+                <div class="value" id="days">00</div>
+                <div class="label">Days</div>
+            </div>
+            <div class="countdown-box">
+                <div class="value" id="hours">00</div>
+                <div class="label">Hours</div>
+            </div>
+            <div class="countdown-box">
+                <div class="value" id="minutes">00</div>
+                <div class="label">Minutes</div>
+            </div>
+            <div class="countdown-box">
+                <div class="value" id="seconds">00</div>
+                <div class="label">Seconds</div>
+            </div>
+            <p class="problem">Are you ready to hear what’s never been said ? In a world filled with reels, reactions, and constant noise, we’ve forgotten how to truly listen. <span class="red-text">TEDx</span> SNPSU presents “Shravan” — a celebration of The Lost Art of Listening in a Loud World. This event invites you to slow down, tune in, and rediscover the power of deep, intentional listening — not to reply, but to understand.
+                <br>Let’s break the noise. Let’s begin to listen.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore cumque eaque nobis officia provident ipsum accusantium optio sint expedita excepturi. Veritatis sunt error ad quaerat consectetur totam a eum, rem fugiat dicta voluptas obcaecati, tempore, accusantium nesciunt similique corporis nobis et expedita assumenda odit quas! Tempore voluptates doloribus facilis ducimus assumenda culpa voluptatibus placeat omnis eaque esse quia fugit animi dicta enim ullam magnam nemo numquam, aspernatur debitis facere perspiciatis? Cum praesentium facere veritatis qui nemo omnis iusto eligendi ratione blanditiis! Adipisci odit iste nesciunt, pariatur voluptas quos veritatis laudantium quae maxime! Vel porro dignissimos magni. A quaerat quae suscipit!</p>
+        </div>
+    </section>
+
+
+
+    <script>
+        
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- Countdown Timer Logic ---
+            // Set the target date and time for the countdown
+            // You can customize this date and time
+            // Example: "July 25, 2025 10:00:00"
+            // Use a valid date string format that JavaScript's Date.parse() can understand.
+            const countdownDate = new Date("July 30, 2025 10:00:00").getTime();
+
+            // Update the countdown every 1 second
+            const countdownInterval = setInterval(function () {
+
+                // Get current date and time
+                const now = new Date().getTime();
+
+                // Calculate the distance between now and the countdown date
+                const distance = countdownDate - now;
+
+                // Time calculations for days, hours, minutes and seconds
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Display the result in the respective elements
+                document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+                document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+                document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+                document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+
+                // If the countdown is finished, write some text
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById("days").innerHTML = "00";
+                    document.getElementById("hours").innerHTML = "00";
+                    document.getElementById("minutes").innerHTML = "00";
+                    document.getElementById("seconds").innerHTML = "00";
+                    // Optionally, display a message or change content when countdown ends
+                    // For example:
+                    // document.getElementById("countdown").innerHTML = "<h2>The event has started!</h2>";
+                }
+            }, 1000);
+        });
+
+
+
+
+
+    </script>
 </body>
 </html>
